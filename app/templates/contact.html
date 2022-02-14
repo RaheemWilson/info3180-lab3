@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div>
+    <h1 class="form-header">
+        Contact Form
+    </h1>
+    <hr>
+    <p class="form-instructions">Fill in this form to contact the site owners.</p>
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="input-field">
+            <div class="input-label">
+                {{ form.name.label}} <span class="required">(Required)</span>
+            </div>
+            <p>
+                {{ form.name.description }}
+            </p>
+            {{ form.name}}
+        </div>
+        <div class="input-field">
+            <div class="input-label">
+                {{ form.email.label }} <span class="required">(Required)</span>
+            </div>
+            <p>
+                {{ form.email.description }}
+            </p>
+            {{ form.email}}
+        </div>
+        <div class="input-field">
+            <div class="input-label">
+                {{ form.subject.label }} <span class="required">(Required)</span>
+            </div>
+            <p>
+                {{ form.subject.description }}
+            </p>
+            {{ form.subject}}
+        </div>
+        <div class="input-field">
+            <div class="input-label">
+                {{ form.message.label }} <span class="required">(Required)</span>
+            </div>
+            <p>
+                {{ form.message.description }}
+            </p>
+            {{ form.message}}
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+{% endblock %}
